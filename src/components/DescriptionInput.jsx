@@ -28,7 +28,7 @@ function DescriptionInput({ onSeted }) {
           
           //trim value to find noSpace text length
           const trimmedValue = value.trim();
-          if (trimmedValue.length > 0) {
+          if (trimmedValue.length > 0 && value.length < 512) {
             onSeted(true);
           } else {
             onSeted(false);
