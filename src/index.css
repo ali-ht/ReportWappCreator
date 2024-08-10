@@ -1,0 +1,16 @@
+@font-face {
+  font-family: IRANYekanWeb;
+  src: url(./test.woff2) format('woff2');
+}
+
+
+html,
+body,
+#root{
+  direction: rtl;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: IRANYekanWeb;
+}
