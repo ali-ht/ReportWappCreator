@@ -25,6 +25,7 @@ function DescriptionInput({ onSeted }) {
             : setColor(["#0F8A40", "success"]);
 
           setLength(value.length);
+          
           //trim value to find noSpace text length
           const trimmedValue = value.trim();
           if (trimmedValue.length > 0) {
