@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import StatusSelection from "./StatusSelection";
 import DescriptionInput from "./DescriptionInput";
 import EndButtons from "./EndButtons";
+import TopBar from "./TopBar";
 
 export default function CreatorPage() {
 
@@ -29,6 +30,7 @@ export default function CreatorPage() {
 
     return (
         <div>
+            <TopBar></TopBar>
             <div style={{ padding: "16px", gap: "32px", display: "grid" }}>
                 <StatusSelection onSeted={changeStatusState} />
                 <DescriptionInput onSeted={changeDescriptionState} />
