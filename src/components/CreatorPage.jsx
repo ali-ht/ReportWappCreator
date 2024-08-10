@@ -9,7 +9,7 @@ export default function CreatorPage() {
                 <StatusSelection/>
                 <DescriptionInput/>
             </div>
-            <div style={{padding:'8px 12px 8px 12px' , bottom:'10px' , position:'fixed' , width:'calc(100% - 24px)'}}>
+            <div style={{padding:'8px 12px 8px 12px' , bottom:'0px' , position:'fixed' , width:'calc(100% - 24px)' , backgroundColor:'white'}}>
             <EndButtons title="ذخیره و انتشار" disable={false}/>
             </div>
         </div>
