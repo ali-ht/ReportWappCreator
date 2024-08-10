@@ -14,7 +14,7 @@ function DescriptionInput() {
       .join('');
   }
   return (
-    <>
+    <div>
     <TextField
     fullWidth
     color={color[1]}
@@ -41,7 +41,7 @@ function DescriptionInput() {
     <Typography sx={{color:color[0] , direction:'ltr' , fontFamily:'IRANYekanWeb'}}>
         {toFarsiNumber(length)}/۵۱۲
     </Typography>
-    </>
+    </div>
   );
   
 }
