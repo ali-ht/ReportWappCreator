@@ -56,7 +56,7 @@ export default function StatusSelection() {
           control={<Radio color="default" />}
           label={
             <DivStyle>
-              <CircleIcon sx={{ width: '12px', color: '#D02128' }} />
+              <CircleIcon sx={{ width: '15px', color: '#D02128' }} />
               <TypStyle>متوقف شده</TypStyle>
             </DivStyle>
           }
@@ -68,7 +68,7 @@ export default function StatusSelection() {
           control={<Radio color="default" />}
           label={
             <DivStyle>
-              <CircleIcon sx={{ width: '12px', color: '#F7B408' }} />
+              <CircleIcon sx={{ width: '15px', color: '#F7B408' }} />
               <TypStyle>نیازمند بازبینی</TypStyle>
             </DivStyle>
           }
@@ -80,7 +80,7 @@ export default function StatusSelection() {
           control={<Radio color="default" />}
           label={
             <DivStyle>
-              <CircleIcon sx={{ width: '12px', color: '#505F56' }} />
+              <CircleIcon sx={{ width: '15px', color: '#505F56' }} />
               <TypStyle>آماده انجام</TypStyle>
             </DivStyle>
           }
@@ -92,7 +92,7 @@ export default function StatusSelection() {
           control={<Radio color="default" />}
           label={
             <DivStyle>
-              <CircleIcon sx={{ width: '12px', color: '#0AA7D9' }} />
+              <CircleIcon sx={{ width: '15px', color: '#0AA7D9' }} />
               <TypStyle>در حال انجام</TypStyle>
             </DivStyle>
           }
@@ -104,7 +104,7 @@ export default function StatusSelection() {
           control={<Radio color="default" />}
           label={
             <DivStyle>
-              <CircleIcon sx={{ width: '12px', color: '#14B858' }} />
+              <CircleIcon sx={{ width: '15px', color: '#14B858' }} />
               <TypStyle>انجام شده</TypStyle>
             </DivStyle>
           }
