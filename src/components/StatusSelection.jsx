@@ -5,16 +5,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import styled from '@emotion/styled';
 import CircleIcon from '@mui/icons-material/Circle';
-import './StatusSelection.css'
 
 const DivStyle = styled('div')({
-    display: 'flex',
-    alignItems: 'center',
-    columnGap: '8px'
+  display: 'flex',
+  alignItems: 'center',
+  columnGap: '8px'
 });
 
 const TypStyle = styled('Typography')({
-    fontFamily: 'IRANYekanWeb'
+  fontFamily: 'IRANYekanWeb'
 });
 
 export default function StatusSelection() {
@@ -32,13 +31,17 @@ export default function StatusSelection() {
         '& css-dmmspl-MuiFormGroup-root': { rowGap: '8px' },
         '& .MuiFormControlLabel-root': {
           border: '1px solid #D3DED8',
-          borderRadius: '12px',
+          borderRadius: '15px',
           margin: '0px',
           height: '40px',
           padding: '4px 12px 4px 16px',
         },
         '& .css-dmmspl-MuiFormGroup-root': {
           rowGap: '8px'
+        },
+        '& .selected': {
+          backgroundColor: '#E9EDEB',
+          border: 'solid 0.1rem #86928B !important',
         }
       }}
     >
@@ -109,6 +112,6 @@ export default function StatusSelection() {
           className={selectedValue === 'انجام شده' ? 'selected' : ''}
         />
       </RadioGroup>
-    </FormControl>
+    </FormControl >
   );
 }
