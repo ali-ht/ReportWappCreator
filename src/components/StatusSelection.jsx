@@ -16,12 +16,17 @@ const TypStyle = styled('Typography')({
   fontFamily: 'IRANYekanWeb'
 });
 
-export default function StatusSelection() {
+export default function StatusSelection({ onSeted }) {
   const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
+    onSeted();
   };
+
+  const setSelectedStatus = () => {
+    setSelectedStatus('true');
+  }
 
   return (
     <FormControl
