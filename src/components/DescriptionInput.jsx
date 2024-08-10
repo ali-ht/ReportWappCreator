@@ -20,12 +20,17 @@ function DescriptionInput({ onSeted }) {
         color={color[1]}
         onChange={(e) => {
           const value = e.target.value;
-          value.length >= 512 ? setColor(["#D02128", "error"]) : setColor(["#0F8A40", "success"]);
+          value.length >= 512
+            ? setColor(["#D02128", "error"])
+            : setColor(["#0F8A40", "success"]);
+
           setLength(value.length);
-          if(value.length > 0 && value != " "){
+          //trim value to find noSpace text length
+          const trimmedValue = value.trim();
+          if (trimmedValue.length > 0) {
             onSeted(true);
           } else {
-            onSeted(false)
+            onSeted(false);
           }
         }}
         placeholder="عنوان لیبل را وارد کنید"
