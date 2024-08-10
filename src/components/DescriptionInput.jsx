@@ -33,9 +33,12 @@ function DescriptionInput() {
             borderRadius: "12px",
             borderWidth: "1px",
         },
+        "& .css-1826p56-MuiInputBase-root-MuiOutlinedInput-root":{
+            fontFamily:'IRANYekanWeb'
+        }
     }}
     />
-    <Typography sx={{color:color[0]}}>
+    <Typography sx={{color:color[0] , direction:'ltr' , fontFamily:'IRANYekanWeb'}}>
         {toFarsiNumber(length)}/۵۱۲
     </Typography>
     </>

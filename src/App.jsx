@@ -1,8 +1,8 @@
-import DescriptionInput from "./components/DescriptionInput"
+import CreatorPage from "./components/CreatorPage"
 
 function App() {
   return (
-    <DescriptionInput/>
+    <CreatorPage/>
   )
 }
 

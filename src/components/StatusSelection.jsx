@@ -15,11 +15,11 @@ const TypStyle = styled('Typography')({
     fontFamily:'IRANYekanWeb'
 });
 
-export default function RadioButtonsGroup() {
+export default function StatusSelection() {
   return (
     <FormControl sx={{
-        width:'calc(100% - 20px)',
-        padding:'8px',
+        // width:'calc(100% - 20px)',
+        width:'100%',
         '& .MuiFormControlLabel-label':{fontFamily:'IRANYekanWeb', width:'100%'},
         '& css-dmmspl-MuiFormGroup-root':{rowGap:'8px'},
         '& .MuiFormControlLabel-root':{
