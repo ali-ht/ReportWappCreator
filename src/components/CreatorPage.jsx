@@ -8,7 +8,7 @@ import { Typography } from "@mui/material";
 export default function CreatorPage() {
 
     const [isStausSelected, setIsStatusSelected] = useState(false);
-    const [isDescriptionWritten, setIsDescriptionWritten] = useState(false);
+    const [DescrpitionText, setDescrpitionText] = useState('');
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
     const [isLoading, setIsLoading] = useState(false)
 
@@ -21,16 +21,18 @@ export default function CreatorPage() {
 
     const changeStatusState = () => {
         setIsStatusSelected(true);
-        setEnableButton(true, isDescriptionWritten);
+        setEnableButton(true, DescrpitionText);
     };
 
     const changeDescriptionState = (value) => {
-        setIsDescriptionWritten(value);
-        setEnableButton(isStausSelected, value);
+        setDescrpitionText(value);
+        //trim value to find noSpace text length
+        const trimmedValue = value.trim();
+        setEnableButton(isStausSelected, trimmedValue);
     };
 
     const setEnableButton = (statusSelected, descriptionWritten) => {
-        if (statusSelected && descriptionWritten) {
+        if (statusSelected && (descriptionWritten > 0)) {
             setIsButtonEnabled(true);
         } else {
             setIsButtonEnabled(false);
@@ -41,13 +43,13 @@ export default function CreatorPage() {
         <div>
             <TopBar />
             <div style={{ padding: "16px", gap: "32px", display: "grid" }}>
-                <div style={{display:'grid' , gap:'12px'}}>
-                    <Typography sx={{fontFamily: 'IRANYekanWeb' , color:'#114FBB'}}>وضعیت پروژه را انتخاب کنید</Typography>
+                <div style={{ display: 'grid', gap: '12px' }}>
+                    <Typography sx={{ fontFamily: 'IRANYekanWeb', color: '#114FBB' }}>وضعیت پروژه را انتخاب کنید</Typography>
                     <StatusSelection onSeted={changeStatusState} />
                 </div>
-                <div style={{display:'grid' , gap:'8px'}}>
-                <Typography sx={{fontFamily: 'IRANYekanWeb' , color:'#114FBB'}}>توضیحات</Typography>
-                <DescriptionInput onSeted={changeDescriptionState} />
+                <div style={{ display: 'grid', gap: '8px' }}>
+                    <Typography sx={{ fontFamily: 'IRANYekanWeb', color: '#114FBB' }}>توضیحات</Typography>
+                    <DescriptionInput onSeted={changeDescriptionState} />
                 </div>
             </div>
             <div

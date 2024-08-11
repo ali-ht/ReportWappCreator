@@ -24,16 +24,8 @@ function DescriptionInput({ onSeted }) {
           value.length >= 512
             ? setColor(["#D02128", "error"])
             : setColor(["#0F8A40", "success"]);
-
           setLength(value.length);
-
-          //trim value to find noSpace text length
-          const trimmedValue = value.trim();
-          if (trimmedValue.length > 0 && value.length <= 512) {
-            onSeted(true);
-          } else {
-            onSeted(false);
-          }
+          onSeted(value);
         }}
         placeholder="عنوان لیبل را وارد کنید"
         id="outlined-multiline-static"
@@ -51,7 +43,7 @@ function DescriptionInput({ onSeted }) {
           }
         }}
       />
-      <Typography sx={{ color: color[0], direction: 'ltr', fontFamily: 'IRANYekanWeb' , paddingTop:'4px' }}>
+      <Typography sx={{ color: color[0], direction: 'ltr', fontFamily: 'IRANYekanWeb', paddingTop: '4px' }}>
         {toFarsiNumber(length)}/۵۱۲
       </Typography>
     </div>
