@@ -21,7 +21,7 @@ export default function CreatorPage() {
 
     const changeStatusState = (value) => {
         setStatusSelected(value);
-        setEnableButton(true, DescrpitionText);
+        setEnableButton(true, DescrpitionText.length);
     };
 
     const changeDescriptionState = (value) => {
@@ -31,8 +31,8 @@ export default function CreatorPage() {
         setEnableButton(StausSelected.length, trimmedValue.length);
     };
 
-    const setEnableButton = (statusSelected, descriptionWritten) => {
-        if ((statusSelected > 0) && (descriptionWritten > 0)) {
+    const setEnableButton = (statusLength, descriptionLength) => {
+        if ((statusLength > 0) && (descriptionLength > 0)) {
             setIsButtonEnabled(true);
         } else {
             setIsButtonEnabled(false);
