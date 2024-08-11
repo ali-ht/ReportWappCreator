@@ -22,7 +22,6 @@ export default function StatusSelection({ onSeted }) {
   const handleChange = (event) => {
     const value = event.target.value
     setSelectedValue(value);
-    // console.log()
     onSeted(value);
   };
 
