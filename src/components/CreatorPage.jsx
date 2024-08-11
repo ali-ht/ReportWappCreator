@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 
 export default function CreatorPage() {
 
-    const [isStausSelected, setIsStatusSelected] = useState(false);
+    const [StausSelected, setStatusSelected] = useState('');
     const [DescrpitionText, setDescrpitionText] = useState('');
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
     const [isLoading, setIsLoading] = useState(false)
@@ -19,8 +19,8 @@ export default function CreatorPage() {
         }, 2000)
     }
 
-    const changeStatusState = () => {
-        setIsStatusSelected(true);
+    const changeStatusState = (value) => {
+        setStatusSelected(value);
         setEnableButton(true, DescrpitionText);
     };
 
@@ -28,11 +28,11 @@ export default function CreatorPage() {
         setDescrpitionText(value);
         //trim value to find noSpace text length
         const trimmedValue = value.trim();
-        setEnableButton(isStausSelected, trimmedValue);
+        setEnableButton(StausSelected.length, trimmedValue.length);
     };
 
     const setEnableButton = (statusSelected, descriptionWritten) => {
-        if (statusSelected && (descriptionWritten > 0)) {
+        if ((statusSelected > 0) && (descriptionWritten > 0)) {
             setIsButtonEnabled(true);
         } else {
             setIsButtonEnabled(false);

@@ -20,8 +20,10 @@ export default function StatusSelection({ onSeted }) {
   const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-    onSeted();
+    const value = event.target.value
+    setSelectedValue(value);
+    // console.log()
+    onSeted(value);
   };
 
   return (
