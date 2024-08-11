@@ -1,5 +1,4 @@
-import React from 'react';
-import EastIcon from '@mui/icons-material/East';
+import EastIcon from '@mui/icons-material/EastRounded';
 import IconButton from '@mui/material/IconButton';
 import { Typography } from '@mui/material';
 
@@ -11,17 +10,18 @@ export default function TopBar() {
         backgroundColor: '#F1F5F3',
         display: 'flex',
         borderBottom: '1px solid #D3DED8',
+        alignItems:'center'
         }}>
-            <IconButton sx={{width: '40px', height: '40px', margin: '7px 17px'}}>
+            <IconButton sx={{width: '40px', height: '40px', margin: '7px 7px'}}>
                 <EastIcon sx={{
-                    width: '40px',
-                    height: '40px',
+                    width: '24px',
+                    height: '24px',
                     padding: '4px',
                     gap: '4px',
                     color: 'black',
                 }} />
             </IconButton>
-            <Typography sx={{fontFamily: 'IRANYekanWeb', fontWeight: 'bold', color: 'black', marginTop: '15px'}}>
+            <Typography sx={{fontFamily: 'IRANYekanWeb', fontWeight: 'bold', color: 'black'}}>
                 ثبت گزارش عملکرد
             </Typography>
         </div>

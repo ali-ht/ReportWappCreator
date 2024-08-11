@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import StatusSelection from "./StatusSelection";
 import DescriptionInput from "./DescriptionInput";
 import EndButtons from "./EndButtons";
 import TopBar from "./TopBar";
+import { Typography } from "@mui/material";
 
 export default function CreatorPage() {
 
@@ -30,10 +31,16 @@ export default function CreatorPage() {
 
     return (
         <div>
-            <TopBar></TopBar>
+            <TopBar />
             <div style={{ padding: "16px", gap: "32px", display: "grid" }}>
-                <StatusSelection onSeted={changeStatusState} />
+                <div style={{display:'grid' , gap:'12px'}}>
+                    <Typography sx={{fontFamily: 'IRANYekanWeb' , color:'#114FBB'}}>وضعیت پروژه را انتخاب کنید</Typography>
+                    <StatusSelection onSeted={changeStatusState} />
+                </div>
+                <div style={{display:'grid' , gap:'8px'}}>
+                <Typography sx={{fontFamily: 'IRANYekanWeb' , color:'#114FBB'}}>توضیحات</Typography>
                 <DescriptionInput onSeted={changeDescriptionState} />
+                </div>
             </div>
             <div
                 style={{

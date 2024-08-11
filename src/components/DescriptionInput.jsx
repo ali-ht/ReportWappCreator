@@ -17,6 +17,7 @@ function DescriptionInput({ onSeted }) {
     <div>
       <TextField
         fullWidth
+        inputProps={{ maxLength: 512 }}
         color={color[1]}
         onChange={(e) => {
           const value = e.target.value;
@@ -25,10 +26,10 @@ function DescriptionInput({ onSeted }) {
             : setColor(["#0F8A40", "success"]);
 
           setLength(value.length);
-          
+
           //trim value to find noSpace text length
           const trimmedValue = value.trim();
-          if (trimmedValue.length > 0 && value.length < 512) {
+          if (trimmedValue.length > 0 && value.length <= 512) {
             onSeted(true);
           } else {
             onSeted(false);
@@ -50,7 +51,7 @@ function DescriptionInput({ onSeted }) {
           }
         }}
       />
-      <Typography sx={{ color: color[0], direction: 'ltr', fontFamily: 'IRANYekanWeb' }}>
+      <Typography sx={{ color: color[0], direction: 'ltr', fontFamily: 'IRANYekanWeb' , paddingTop:'4px' }}>
         {toFarsiNumber(length)}/۵۱۲
       </Typography>
     </div>
