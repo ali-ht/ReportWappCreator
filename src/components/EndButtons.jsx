@@ -10,10 +10,10 @@ const StyledButton = styled(Button)({
   fontFamily: "IRANYekanWeb",
 });
 
-export default function EndButtons({ title , disable }) {
+export default function EndButtons({ title , disable , ...other }) {
   if (disable) {
     return (
-      <StyledButton variant="text" sx={{
+      <StyledButton variant="text" {...other} sx={{
         backgroundColor: "#BCC3BF",
         cursor: "default",
         ":hover": {
@@ -25,7 +25,7 @@ export default function EndButtons({ title , disable }) {
     )
   }
   else return (
-    <StyledButton variant="text" sx={{
+    <StyledButton variant="text" {...other} sx={{
       backgroundColor: "#14B858",
       ":hover": {
         backgroundColor: "#32CD32"

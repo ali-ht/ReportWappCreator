@@ -10,6 +10,14 @@ export default function CreatorPage() {
     const [isStausSelected, setIsStatusSelected] = useState(false);
     const [isDescriptionWritten, setIsDescriptionWritten] = useState(false);
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
+
+    const submit = () => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 2000)
+    }
 
     const changeStatusState = () => {
         setIsStatusSelected(true);
@@ -51,7 +59,7 @@ export default function CreatorPage() {
                     backgroundColor: "white",
                 }}
             >
-                <EndButtons title="ذخیره و انتشار" disable={!isButtonEnabled} />
+                <EndButtons title="ذخیره و انتشار" disable={!isButtonEnabled || isLoading} onClick={submit} />
             </div>
         </div>
     );
