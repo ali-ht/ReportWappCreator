@@ -1,30 +1,38 @@
-import { useState } from "react"
-import Radio from "@mui/material/Radio"
-import RadioGroup from "@mui/material/RadioGroup"
-import FormControlLabel from "@mui/material/FormControlLabel"
-import FormControl from "@mui/material/FormControl"
-import styled from "@emotion/styled"
-import CircleIcon from "@mui/icons-material/Circle"
+import { useState } from "react";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import styled from "@emotion/styled";
+import CircleIcon from "@mui/icons-material/Circle";
 
 const DivStyle = styled("div")({
   display: "flex",
   alignItems: "center",
   columnGap: "8px",
-})
+});
 
 const TypStyle = styled("Typography")({
   fontFamily: "IRANYekanWeb",
-})
+});
 
 export default function StatusSelection({ onSeted }) {
   //TODO: remove use state and use Props
-  const [selectedValue, setSelectedValue] = useState("")
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleChange = (event) => {
-    const value = event.target.value
-    setSelectedValue(value)
-    onSeted(value)
-  }
+    const value = event.target.value;
+    setSelectedValue(value);
+    onSeted(value);
+  };
+
+  const statusOptions = [
+    { value: "متوقف شده", color: "#D02128" },
+    { value: "نیازمند بازبینی", color: "#F7B408" },
+    { value: "آماده انجام", color: "#505F56" },
+    { value: "در حال انجام", color: "#0AA7D9" },
+    { value: "انجام شده", color: "#14B858" },
+  ];
 
   return (
     <FormControl
@@ -49,74 +57,29 @@ export default function StatusSelection({ onSeted }) {
           backgroundColor: "#E9EDEB",
           border: "solid 0.1rem #86928B !important",
         },
-      }}>
+      }}
+    >
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
         name="radio-buttons-group"
-        onChange={handleChange}>
-        {/*  //TODO: use array of object . remove duplicate code */}
-        <FormControlLabel
-          value="متوقف شده"
-          control={<Radio color="default" />}
-          label={
-            <DivStyle>
-              <CircleIcon sx={{ width: "15px", color: "#D02128" }} />
-              <TypStyle>متوقف شده</TypStyle>
-            </DivStyle>
-          }
-          labelPlacement="start"
-          className={selectedValue === "متوقف شده" ? "selected" : ""}
-        />
-        <FormControlLabel
-          value="نیازمند بازبینی"
-          control={<Radio color="default" />}
-          label={
-            <DivStyle>
-              <CircleIcon sx={{ width: "15px", color: "#F7B408" }} />
-              <TypStyle>نیازمند بازبینی</TypStyle>
-            </DivStyle>
-          }
-          labelPlacement="start"
-          className={selectedValue === "نیازمند بازبینی" ? "selected" : ""}
-        />
-        <FormControlLabel
-          value="آماده انجام"
-          control={<Radio color="default" />}
-          label={
-            <DivStyle>
-              <CircleIcon sx={{ width: "15px", color: "#505F56" }} />
-              <TypStyle>آماده انجام</TypStyle>
-            </DivStyle>
-          }
-          labelPlacement="start"
-          className={selectedValue === "آماده انجام" ? "selected" : ""}
-        />
-        <FormControlLabel
-          value="در حال انجام"
-          control={<Radio color="default" />}
-          label={
-            <DivStyle>
-              <CircleIcon sx={{ width: "15px", color: "#0AA7D9" }} />
-              <TypStyle>در حال انجام</TypStyle>
-            </DivStyle>
-          }
-          labelPlacement="start"
-          className={selectedValue === "در حال انجام" ? "selected" : ""}
-        />
-        <FormControlLabel
-          value="انجام شده"
-          control={<Radio color="default" />}
-          label={
-            <DivStyle>
-              <CircleIcon sx={{ width: "15px", color: "#14B858" }} />
-              <TypStyle>انجام شده</TypStyle>
-            </DivStyle>
-          }
-          labelPlacement="start"
-          className={selectedValue === "انجام شده" ? "selected" : ""}
-        />
+        onChange={handleChange}
+      >
+        {statusOptions.map((option) => (
+          <FormControlLabel
+            key={option.value}
+            value={option.value}
+            control={<Radio color="default" />}
+            label={
+              <DivStyle>
+                <CircleIcon sx={{ width: "15px", color: option.color }} />
+                <TypStyle>{option.value}</TypStyle>
+              </DivStyle>
+            }
+            labelPlacement="start"
+            className={selectedValue === option.value ? "selected" : ""}
+          />
+        ))}
       </RadioGroup>
     </FormControl>
-  )
+  );
 }
