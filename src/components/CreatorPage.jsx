@@ -78,7 +78,7 @@ export default function CreatorPage() {
         }}>
         <EndButtons
           title="ذخیره و انتشار"
-          disable={(!StatusSelected && DescriptionText.trim.length > 0)}
+          disable={!isButtonEnabled || isLoading}
           onClick={submit}
         />
       </div>
