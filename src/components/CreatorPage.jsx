@@ -6,10 +6,8 @@ import TopBar from "./TopBar"
 import { Typography } from "@mui/material"
 
 export default function CreatorPage() {
-  // TODO: Correct the spelling mistake
-  const [StausSelected, setStatusSelected] = useState("")
-  // TODO: Correct the spelling mistake
-  const [DescrpitionText, setDescrpitionText] = useState("")
+  const [StatusSelected, setStatusSelected] = useState("")
+  const [DescriptionText, setDescriptionText] = useState("")
   //TODO remove isButtonEnabled and setIsButtonEnabled
   const [isButtonEnabled, setIsButtonEnabled] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -23,17 +21,16 @@ export default function CreatorPage() {
 
   const changeStatusState = (value) => {
     setStatusSelected(value)
-    setEnableButton(true, DescrpitionText.length)
+    setEnableButton(true, DescriptionText.length)
   }
 
   const changeDescriptionState = (value) => {
-    setDescrpitionText(value)
+    setDescriptionText(value)
     //trim value to find noSpace text length
     const trimmedValue = value.trim()
-    setEnableButton(StausSelected.length, trimmedValue.length)
+    setEnableButton(StatusSelected.length, trimmedValue.length)
   }
 
-  //TODO remove setEnableButton
   const setEnableButton = (statusLength, descriptionLength) => {
     if (statusLength > 0 && descriptionLength > 0) {
       setIsButtonEnabled(true)
@@ -43,8 +40,7 @@ export default function CreatorPage() {
   }
 
   return (
-    //TODO: Remove Div
-    <div>
+    <>
       {/* TODO: change TopBar name */}
       <TopBar />
       {/* TODO: remove gap and display  */}
@@ -56,7 +52,7 @@ export default function CreatorPage() {
           <Typography sx={{ fontFamily: "IRANYekanWeb", color: "#114FBB" }}>
             وضعیت پروژه را انتخاب کنید
           </Typography>
-          {/* remove  onSeted =>  Send the StausSelected as an input to it /// onSeted=> onChange */}
+          {/* remove  onSeted =>  Send the StatusSelected as an input to it /// onSeted=> onChange */}
           <StatusSelection onSeted={changeStatusState} />
         </div>
         {/* TODO: remove div  */}
@@ -66,7 +62,6 @@ export default function CreatorPage() {
             توضیحات
           </Typography>
 
-          {/*TODO Send the description as an input to it //// onSeted=> onChange */}
           <DescriptionInput onSeted={changeDescriptionState} />
         </div>
       </div>
@@ -83,11 +78,10 @@ export default function CreatorPage() {
         }}>
         <EndButtons
           title="ذخیره و انتشار"
-          // TODO use description for this section (disable = ...)
-          disable={!isButtonEnabled || isLoading}
+          disable={(!StatusSelected && DescriptionText.trim.length > 0)}
           onClick={submit}
         />
       </div>
-    </div>
+    </>
   )
 }
