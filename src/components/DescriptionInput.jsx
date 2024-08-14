@@ -1,11 +1,7 @@
 import { useState } from "react"
 import TextField from "@mui/material/TextField"
 import Typography from "@mui/material/Typography"
-function DescriptionInput({ onSeted }) {
-  // TODO: remove color
-  const [color, setColor] = useState(["#0F8A40", "success"])
-  // TODO: remove length
-  const [length, setLength] = useState(0)
+function DescriptionInput({ setDescription, descriptionValue }) {
 
   //TODO: move to the helper
   function toFarsiNumber(n) {
@@ -18,19 +14,16 @@ function DescriptionInput({ onSeted }) {
       .join("")
   }
   return (
-    <div style={{marginBottom:'0px'}}>
+    <div style={{ marginBottom: '0px' }}>
       <TextField
         fullWidth
         inputProps={{ maxLength: 512 }}
-        // TODO: use description for set color
-        color={color[1]}
+        color={descriptionValue.length >= 512
+          ? "error"
+          : "success"
+        }
         onChange={(e) => {
-          const value = e.target.value
-          value.length >= 512
-            ? setColor(["#D02128", "error"])
-            : setColor(["#0F8A40", "success"])
-          setLength(value.length)
-          onSeted(value)
+          setDescription(e.target.value)
         }}
         placeholder="عنوان لیبل را وارد کنید"
         id="outlined-multiline-static"
@@ -50,16 +43,18 @@ function DescriptionInput({ onSeted }) {
       />
       <Typography
         sx={{
-          // TODO: use description for set color
-
-          color: color[0],
+          color:
+            () => {
+              descriptionValue.length >= 512
+                ? "#D02128"
+                : "#0F8A40"
+            }
+          ,
           direction: "ltr",
           fontFamily: "IRANYekanWeb",
           paddingTop: "4px",
         }}>
-        {/*             // TODO: use description for get number character
-         */}
-        {toFarsiNumber(length)}/۵۱۲
+        {toFarsiNumber(descriptionValue.length)}/۵۱۲
       </Typography>
     </div>
   )

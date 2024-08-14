@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -16,14 +15,10 @@ const TypStyle = styled("Typography")({
   fontFamily: "IRANYekanWeb",
 });
 
-export default function StatusSelection({ onSeted }) {
-  //TODO: remove use state and use Props
-  const [selectedValue, setSelectedValue] = useState("");
-
+export default function StatusSelection({ selectedValue, setStatus }) {
   const handleChange = (event) => {
     const value = event.target.value;
-    setSelectedValue(value);
-    onSeted(value);
+    setStatus(value);
   };
 
   const statusOptions = [
