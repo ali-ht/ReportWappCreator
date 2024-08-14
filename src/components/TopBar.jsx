@@ -10,7 +10,10 @@ export default function TopBar() {
         backgroundColor: '#F1F5F3',
         display: 'flex',
         borderBottom: '1px solid #D3DED8',
-        alignItems:'center'
+        alignItems:'center',
+        position:'fixed',
+        top:'0',
+        zIndex:'100',
         }}>
             <IconButton sx={{width: '40px', height: '40px', margin: '7px 7px'}}>
                 <EastIcon sx={{

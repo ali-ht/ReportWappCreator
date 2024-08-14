@@ -18,7 +18,7 @@ function DescriptionInput({ onSeted }) {
       .join("")
   }
   return (
-    <div>
+    <div style={{marginBottom:'0px'}}>
       <TextField
         fullWidth
         inputProps={{ maxLength: 512 }}

@@ -27,11 +27,11 @@ export default function StatusSelection({ onSeted }) {
   };
 
   const statusOptions = [
-    { value: "متوقف شده", color: "#D02128" },
-    { value: "نیازمند بازبینی", color: "#F7B408" },
-    { value: "آماده انجام", color: "#505F56" },
-    { value: "در حال انجام", color: "#0AA7D9" },
-    { value: "انجام شده", color: "#14B858" },
+    { value: "عالی", color: "#0f4d0f" },
+    { value: "خوب", color: "#008000" },
+    { value: "متوسط", color: "#ffd32c" },
+    { value: "ضعیف", color: "#cd1c18" },
+    { value: "بسیار ضعیف", color: "#950606" },
   ];
 
   return (
