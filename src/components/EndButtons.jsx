@@ -28,7 +28,7 @@ export default function EndButtons({ title , disable , ...other }) {
     <StyledButton variant="text" {...other} sx={{
       backgroundColor: "#14B858",
       ":hover": {
-        backgroundColor: "#32CD32"
+        backgroundColor: "#2E7D32"
       }
     }}>
       {title}
