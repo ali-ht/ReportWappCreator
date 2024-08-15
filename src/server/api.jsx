@@ -1,42 +1,37 @@
 import axios from 'axios';
 
-
-const url = '';
-const userId = '';
-const reportId = '';
+const url = 'https://example.com/api';
 
 export const getData = async ({ reportID }) => {
-    axios
-        .get(url + "/" + reportID, null)
-        .then(response => {
-            return response.data;
-        })
-        .catch(error => {
-            console.log(error);
-            return null;
-        })
+    try {
+        const response = await axios.get(`${url}/${reportID}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
+    }
 }
 
 export const sendData = async ({ userId, status, description }) => {
-    return axios
-        .post(
+    const token = 'original jwt token';
+    try {
+        const response = await axios.post(
             url,
             {
-                "status": status,
-                "description": description,
-                "userId": userId
+                status: status,
+                description: description,
+                userId: userId
             },
             {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             }
-        )
-        .then(response => {
-            response.type == "SUCCSESS" ? reportId = response.body.reportId : reportId = '';
-            return reportId;
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        );
+        const reportId = response.data.type === "SUCCESS" ? response.data.reportId : '';
+        return reportId;
+    } catch (error) {
+        console.error('Error sending data:', error);
+        return null;
+    }
 }
