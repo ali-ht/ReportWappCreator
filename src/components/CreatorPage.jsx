@@ -37,7 +37,7 @@ export default function CreatorPage() {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <TopBar />
 
-      <div style={{ flex: 1, padding: '16px', overflowY: 'auto' }}>
+      <div style={{ flex: 1 , padding: '16px', overflowY: 'auto' }}>
         <Typography sx={{ fontFamily: "IRANYekanWeb", color: "#114FBB", marginBottom: '12px', marginTop: '50px' }}>
           وضعیت پروژه را انتخاب کنید
         </Typography>
