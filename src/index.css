@@ -1,6 +1,6 @@
 @font-face {
   font-family: IRANYekanWeb;
-  src: url(./test.woff2) format("woff2");
+  src: url(style/fonts/IranYekanX/woff2/IRANYekanX-Medium.woff2) format("woff2");
 }
 
 html,
@@ -9,8 +9,7 @@ body,
   direction: rtl;
   height: 100%;
   width: 100%;
-  /*TODO: remove px after zero */
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: IRANYekanWeb;
 }
