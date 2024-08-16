@@ -25,7 +25,7 @@ function DescriptionInput({ setDescription, descriptionValue }) {
         onChange={(e) => {
           setDescription(e.target.value)
         }}
-        placeholder="عنوان لیبل را وارد کنید"
+        placeholder="توضیحات را وارد کنید"
         id="outlined-multiline-static"
         multiline
         rows={4}
