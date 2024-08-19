@@ -13,7 +13,7 @@ const StyledButton = styled(Button)({
 export default function EndButtons({ title , disable , ...other }) {
   if (disable) {
     return (
-      <StyledButton variant="text" {...other} sx={{
+      <StyledButton disabled variant="text" {...other} sx={{
         backgroundColor: "#BCC3BF",
         cursor: "default",
         ":hover": {
